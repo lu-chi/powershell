@@ -6,10 +6,10 @@ function Get-LCSystemInfo {
     .SYNOPSIS
     Script for remote machine inspection.
     .OPTIONS
-    inne jakies tam blah balh blah
+    blah balh blah
     .PARAMETER Computername
     .EXAMPLE
-    .\Get-SystemInfo -ComputerName JAKASNAZWA
+    .\Get-SystemInfo -ComputerName ANYCOMPUTERNAME
 
     #>
     [CmdletBinding()]
@@ -18,7 +18,7 @@ function Get-LCSystemInfo {
         [Parameter(Mandatory=$True,
                     ValueFromPipeline = $True, 
                     ValueFromPipelineByPropertyName = $True, 
-                    HelpMessage = "Podaj nazwe kompa lub jego IP")]
+                    HelpMessage = "Computername or IP: ")]
         [Alias('h')]
         [string[]]$ComputerName = 'localhost',
         
@@ -79,5 +79,5 @@ function Get-LCSystemInfo {
 	}
 }
 
-Get-LCSystemInfo -h localhost,127.0.0.1,$wksname,localhost,127.0.0.1,$wksname,localhost,127.0.0.1,$wksname -ShowProgress
+#Get-LCSystemInfo -h localhost,127.0.0.1,$wksname,localhost,127.0.0.1,$wksname,localhost,127.0.0.1,$wksname -ShowProgress
 
