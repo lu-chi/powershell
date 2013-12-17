@@ -6,7 +6,7 @@
 	If the file exist it will be copied to the dedicated location.    
 .NOTES 
     File Name  : Scan-Folder.ps1 
-    Author     : sillvan	
+    Author     : Lukasz Chmielewski	
     Requires   : PowerShell V2 
  .PARAMETER FileName
  	None
@@ -17,9 +17,9 @@
  .PARAMETER Action
  	None
  .EXAMPLE
-	 .\Scan-Folder -FileName file.txt -From \\SharedDrive\SharedFolder -To c:\Documents
-	 This example will look for file.txt file in \\SharedDrive\SharedFolder network folder 
-	 and once the file.txt will be located the script will automaticaly copy that to c:\Documents.
+	 .\Scan-Folder -FileName <file> -From <source> -To <destination>
+	 This example will look for <file> file in <source> folder 
+	 and once <file> located the script will automaticaly copy that to <destination>.
 #>
 function Scan-Folder {
 	param(
@@ -42,7 +42,7 @@ function Scan-Folder {
 		}
 }
 
-Scan-Folder -FileName "lukasz12345*" -From "t:\Scanned Jobs\" -To "d:\scany"
+# Scan-Folder -FileName "<file>" -From "<source>" -To "<destination>"
 
 
 ################################################################################################################################
