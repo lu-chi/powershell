@@ -1,28 +1,30 @@
-
 $configFile = "configuration.xml"
 
 # xml processing 
 $data = [xml](Get-Content $configFile)
 
 function CreateTomcatInstance {
-   <#
+<#
 	 .SYNOPSIS
-	 This script creates a defined amount of Topfas instances.
-	 The whole configuration can be found in configuration.xml file
+	 This script creates a required amount of Tomcat instances based on configuration.xml file.
+	 
 	 .OPTIONS
 	 -CreateConfig
 	 -Config
+	 
 	 .PARAMETER None
+	 
 	 .EXAMPLE
 	 Tomcat-Cofigurator -CreateConfig
 	 This example will create an empty configuraton template. If no name will be provided, 
 	 configuration file will be default
+	 
 	 .EXAMPLE
 	 Tomcat-Cofigurator -Config
 	 This example will use a given configuration file. If no parameter or no option will be provided 
 	 the default configuration.xml file will be used
 
-	 #>
+#>
 	$ParenTomcatPath = $data.config.tomcat.path
 	$instanceGroupName = $data.config.tomcat.instances.group
 	$instanceGroupPath = $data.config.tomcat.instances.path
