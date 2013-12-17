@@ -1,5 +1,5 @@
 #
-function Get-fasInstallation {
+function Get-AppInstallation {
 
   param(
 		[string]$ServerList,
@@ -27,7 +27,7 @@ function Get-fasInstallation {
 	}
 } #~end of function
 
-Get-fasInstallation -ServerList machines.txt 
-# Get-fasInstallation -ServerList machines.txt -Uninstall
+Get-AppInstallation -ServerList machines.txt 
+# Get-AppInstallation -ServerList machines.txt -Uninstall
 
 
